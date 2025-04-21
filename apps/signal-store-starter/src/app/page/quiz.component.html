@@ -1,0 +1,38 @@
+<h1>NgRx Signal Store Seed</h1>
+<p>Use this as a template to file any issues with the NgRx Signal Store.</p>
+<h2>{{ quizStore.title() }}</h2>
+<button (click)="quizStore.restart()">Restart</button>
+
+<p><b>Unanswered:</b> {{ quizStore.score.unanswered() }}</p>
+<p style="color: green;"><b>Correct:</b> {{ quizStore.score.correct() }}</p>
+<p style="color: red;"><b>Incorrect:</b> {{ quizStore.score.incorrect() }}</p>
+
+<hr />
+
+@for (question of quizStore.questions(); track question.id) {
+<div>
+  <h3>{{ question.question }}</h3>
+  <div>
+    @for (choice of question.choices; track choice.id) {
+    <button (click)="quizStore.answer(question.id, choice.id)">
+      {{ choice.text }}
+    </button>
+    }
+  </div>
+
+  @if (question.status !== 'unanswered') {
+  <div>
+    @switch (question.status) {
+    @case ('correct') {
+    <p>Right Answer</p>
+    }
+    @case ('incorrect') {
+    <p>Wrong Answer</p>
+    }
+    }
+
+    <i>{{ question.explanation }}</i>
+  </div>
+  }
+</div>
+}
