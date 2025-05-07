@@ -24,3 +24,17 @@ add tailwindcss:
 
 [ ] Whatsapp
 [ ] Email
+
+
+### Task
+
+> Login page
+
+pnpm nx g @nx/angular:component --path=apps/ng-threeparty/src/app/page/login/login --changeDetection=OnPush
+
+## Util Libraries
+
+- ngx-typed-writer
+  https://www.npmjs.com/package/ngx-typed-writer
+  pnpm add ngx-typed-writer
+
