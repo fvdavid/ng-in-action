@@ -38,3 +38,8 @@ pnpm nx g @nx/angular:component --path=apps/ng-threeparty/src/app/page/login/log
   https://www.npmjs.com/package/ngx-typed-writer
   pnpm add ngx-typed-writer
 
+  > change to this: https://www.npmjs.com/package/typewriter-effect
+
+### Next Mission
+
+  > https://www.youtube.com/watch?v=5NSH8VvJH5o
