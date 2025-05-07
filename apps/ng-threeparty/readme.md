@@ -40,6 +40,12 @@ pnpm nx g @nx/angular:component --path=apps/ng-threeparty/src/app/page/login/log
 
   > change to this: https://www.npmjs.com/package/typewriter-effect
 
+
+- angular/fire
+  install        => pnpm add @angular/fire firebase
+  add to project => pnpm nx g @angular/fire:ng-add --project=ng-threeparty
+
+
 ### Next Mission
 
   > https://www.youtube.com/watch?v=5NSH8VvJH5o
