@@ -9,8 +9,7 @@ import {
 
 import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
-import { MatIconModule, MatIconRegistry } from '@angular/material/icon';
-import { DomSanitizer } from '@angular/platform-browser';
+import { MatIconModule } from '@angular/material/icon';
 
 @Component({
   selector: 'app-login-card',
@@ -27,15 +26,6 @@ import { DomSanitizer } from '@angular/platform-browser';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class LoginCardComponent {
-
-  constructor(iconRegistry: MatIconRegistry, sanitizer: DomSanitizer) {
-    iconRegistry.addSvgIcon(
-      'github',
-      sanitizer.bypassSecurityTrustResourceUrl(
-        './../../../../assets/github-mark/github-mark-white.svg'
-      )
-    );
-  }
 
   loginForm = new FormGroup({
     email: new FormControl('', [Validators.required, Validators.email]),
