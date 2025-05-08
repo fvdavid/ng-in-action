@@ -1,38 +1,4 @@
-<form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
-
-  <mat-form-field class="w-full">
-    <mat-label>Email</mat-label>
-    <input type="email" matInput formControlName="email" placeholder="Ex. fv@example.com">
-
-    @if (loginForm.get('email')?.invalid && loginForm.get('email')?.touched) {
-    <mat-error>A valid email is required.</mat-error>
-    }
-  </mat-form-field>
-
-
-  <mat-form-field class="w-full">
-    <mat-label>Password</mat-label>
-    <input type="password" matInput autocomplete formControlName="password">
-
-    @if (loginForm.get('password')?.invalid && loginForm.get('password')?.touched) {
-    <mat-error>
-      Password must be at least 6 characters long.
-    </mat-error>
-    }
-  </mat-form-field>
-
-  <div class="mt-4">
-    <!-- <button class="w-full" type="submit" mat-stroked-button [disabled]="loginForm.invalid">
-      Login
-    </button> -->
-
-    <button mat-flat-button class="w-full" type="submit" [disabled]="loginForm.invalid">
-      Login
-    </button>
-
-  </div>
-
-</form>
+<app-sign-in />
 
 <div class="flex w-full items-center justify-center mt-10 mb-10">
   <hr class="w-2/5" />

@@ -32,6 +32,10 @@ add tailwindcss:
 
 pnpm nx g @nx/angular:component --path=apps/ng-threeparty/src/app/page/login/login --changeDetection=OnPush
 
+pnpm nx g @nx/angular:component --path=apps/ng-threeparty/src/app/page/home/home --changeDetection=OnPush
+
+pnpm nx g @nx/angular:service --path=apps/ng-threeparty/src/app/service/auth
+
 ## Util Libraries
 
 - ngx-typed-writer
@@ -44,6 +48,8 @@ pnpm nx g @nx/angular:component --path=apps/ng-threeparty/src/app/page/login/log
 - angular/fire
   install        => pnpm add @angular/fire firebase
   add to project => pnpm nx g @angular/fire:ng-add --project=ng-threeparty
+
+  firebase browser session (browserSessionPersistence)
 
 
 ### Next Mission
