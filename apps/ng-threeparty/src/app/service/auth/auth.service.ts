@@ -2,6 +2,7 @@ import { inject, Injectable } from '@angular/core';
 import {
   Auth,
   browserSessionPersistence,
+  FacebookAuthProvider,
   GoogleAuthProvider,
   signInWithEmailAndPassword,
   signInWithPopup,
@@ -86,6 +87,22 @@ export class AuthService {
       }
     } catch (error) {
       console.error('Google login error:', error);
+      throw error;
+    }
+  }
+
+  async facebookLogin(): Promise<void> {
+    const provider = new FacebookAuthProvider();
+    provider.addScope('email');
+    try {
+      const result = await signInWithPopup(this.firebaseAuth, provider);
+      const user = result.user;
+
+      if (!user) {
+        throw new Error('Facebook-Login error');
+      }
+    } catch (error) {
+      console.error('Facebook login error:', error);
       throw error;
     }
   }

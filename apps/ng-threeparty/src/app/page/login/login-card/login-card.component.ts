@@ -32,4 +32,19 @@ export class LoginCardComponent {
       // For example, show an error message to the user
     }
   }
+
+  async onFacebookSignIn(): Promise<void> {
+    console.warn('loginWithFacebook ==> ');
+
+    try {
+      await this.authService.facebookLogin();
+      console.log('Facebook sign-in successful');
+
+      this.router.navigateByUrl('/home');
+    } catch (error) {
+      console.error('Facebook sign-in error:', error);
+      // Handle the error here if needed
+      // For example, show an error message to the user
+    }
+  }
 }
