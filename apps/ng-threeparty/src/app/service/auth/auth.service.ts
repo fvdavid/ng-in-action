@@ -3,10 +3,12 @@ import {
   Auth,
   browserSessionPersistence,
   FacebookAuthProvider,
+  GithubAuthProvider,
   GoogleAuthProvider,
   signInWithEmailAndPassword,
   signInWithPopup,
   signOut,
+  TwitterAuthProvider,
   user,
   User,
 } from '@angular/fire/auth';
@@ -94,6 +96,36 @@ export class AuthService {
   async facebookLogin(): Promise<void> {
     const provider = new FacebookAuthProvider();
     provider.addScope('email');
+    try {
+      const result = await signInWithPopup(this.firebaseAuth, provider);
+      const user = result.user;
+
+      if (!user) {
+        throw new Error('Facebook-Login error');
+      }
+    } catch (error) {
+      console.error('Facebook login error:', error);
+      throw error;
+    }
+  }
+
+  async githubLogin(): Promise<void> {
+    const provider = new GithubAuthProvider();
+    try {
+      const result = await signInWithPopup(this.firebaseAuth, provider);
+      const user = result.user;
+
+      if (!user) {
+        throw new Error('Facebook-Login error');
+      }
+    } catch (error) {
+      console.error('Facebook login error:', error);
+      throw error;
+    }
+  }
+
+  async twitterLogin(): Promise<void> {
+    const provider = new TwitterAuthProvider();
     try {
       const result = await signInWithPopup(this.firebaseAuth, provider);
       const user = result.user;
