@@ -5,6 +5,7 @@ import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
 import { getAuth, provideAuth } from '@angular/fire/auth';
 import { getFirestore, provideFirestore } from '@angular/fire/firestore';
 import { provideHttpClient } from '@angular/common/http';
+import { provideAuth0 } from '@auth0/auth0-angular';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -23,5 +24,12 @@ export const appConfig: ApplicationConfig = {
     provideAuth(() => getAuth()),
     provideFirestore(() => getFirestore()),
     provideHttpClient(),
+    provideAuth0({
+      domain: 'fvroot.au.auth0.com',
+      clientId: 'Jkz43xhuaHDK3ebVxkBPMc3RbO3V9pxq',
+      authorizationParams: {
+        redirect_uri: window.location.origin,
+      },
+    }),
   ],
 };

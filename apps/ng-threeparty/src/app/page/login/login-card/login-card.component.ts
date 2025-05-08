@@ -5,10 +5,11 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { AuthService } from '../../../service/auth/auth.service';
 import { Router } from '@angular/router';
+import { Auth0Component } from '../sign-in-auth0/sign-in/auth0.component';
 
 @Component({
   selector: 'app-login-card',
-  imports: [CommonModule, MatButtonModule, MatIconModule],
+  imports: [CommonModule, MatButtonModule, MatIconModule, Auth0Component],
   templateUrl: './login-card.component.html',
   styleUrl: './login-card.component.css',
   changeDetection: ChangeDetectionStrategy.OnPush,

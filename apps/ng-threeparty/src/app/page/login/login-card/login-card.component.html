@@ -7,7 +7,7 @@
 </div>
 
 <div class="flex w-full flex-col items-center justify-center gap-y-5">
-  <button mat-flat-button class="w-full" (click)="onGoogleSignIn()">
+  <button mat-flat-button class="w-3/4" (click)="onGoogleSignIn()">
     <svg class="mr-2 inline-block h-7 w-7" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
       <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
       <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
@@ -29,7 +29,7 @@
     Continue with Google
   </button>
 
-  <button mat-flat-button class="w-full" (click)="onGithubSignIn()">
+  <button mat-flat-button class="w-3/4" (click)="onGithubSignIn()">
     <svg class="mr-2 inline-block h-7 w-7" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg"
       xmlns:xlink="http://www.w3.org/1999/xlink" fill="#000000">
       <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
@@ -52,7 +52,7 @@
     <span class="mr-2">Continue with Github</span>
   </button>
 
-  <button mat-flat-button class="w-full" (click)="onFacebookSignIn()">
+  <button mat-flat-button class="w-3/4" (click)="onFacebookSignIn()">
     <svg class="mr-2 inline-block h-7 w-7" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
       <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
       <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
@@ -65,7 +65,7 @@
     Continue with Facebook
   </button>
 
-  <button mat-flat-button class="w-full" (click)="onTwitterSignIn()">
+  <button mat-flat-button class="w-3/4" (click)="onTwitterSignIn()">
     <svg class="mr-2 inline-block h-7 w-7" fill="#000000" xmlns="http://www.w3.org/2000/svg"
       preserveAspectRatio="xMidYMid" viewBox="0 0 31.812 26">
       <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
@@ -79,6 +79,8 @@
     Continue with Twitter
   </button>
 </div>
+
+<app-auth0 />
 
 <!-- <ul>
   <li>
