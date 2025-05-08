@@ -1,1 +1,18 @@
-{}
+{
+  "hosting": [
+    {
+      "public": "dist/apps/ng-threeparty/browser",
+      "site": "fv-demos",
+      "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
+      "frameworksBackend": {
+        "region": "asia-east1"
+      },
+      "rewrites": [
+        {
+          "source": "**",
+          "destination": "/index.html"
+        }
+      ]
+    }
+  ]
+}

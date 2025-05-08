@@ -20,6 +20,13 @@ add tailwindcss:
     [ ] Storage
     [ ] Authehtication
 
+## Firebase Hosting
+
+  > pnpm exec firebase login
+  > pnpm exec firebase init hosting
+
+  > pnpm exec firebase deploy --only hosting:fv-demos (firebase deploy --only hosting:fv-demos)
+
 ### Twillio
 
 [ ] Whatsapp
@@ -55,3 +62,4 @@ pnpm nx g @nx/angular:service --path=apps/ng-threeparty/src/app/service/auth
 ### Next Mission
 
   > https://www.youtube.com/watch?v=5NSH8VvJH5o
+
