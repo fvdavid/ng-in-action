@@ -2,6 +2,7 @@ import { inject, Injectable } from '@angular/core';
 import {
   Auth,
   browserSessionPersistence,
+  createUserWithEmailAndPassword,
   FacebookAuthProvider,
   GithubAuthProvider,
   GoogleAuthProvider,
@@ -57,18 +58,16 @@ export class AuthService {
   }
 
   register(email: string, password: string): Observable<void> {
-    const userCredential = signInWithEmailAndPassword(
+    const newUser = createUserWithEmailAndPassword(
       this.firebaseAuth,
       email,
       password
-    )
-      .then(() => {
-        console.log('Registration successful');
-      })
-      .catch((error) => {
-        console.error('Registration error:', error);
-      });
-    return from(userCredential)
+    ).then((userCredential) => {
+      const user = userCredential.user;
+      console.log('User registered:', user);
+    });
+
+    return from(newUser)
       .pipe
       // Handle the error here if needed
       // catchError((error) => {
