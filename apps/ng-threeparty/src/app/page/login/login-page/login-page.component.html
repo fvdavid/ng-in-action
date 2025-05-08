@@ -77,12 +77,12 @@
       <div class="flex flex-col text-[32px] leading-[1.2] md:text-[40px]">
         <div class="-mt-4 flex w-full flex-col ps-5 md:ps-8 lg:ps-10">
 
-          <!-- <ngx-typed-writer [strings]="[
+          <ngx-typed-writer [strings]="[
                   'This sample create with Angular 19 + Material UI + Tailwindcss + Firebase Authentication',
                   'You can login with Email and Password, also with Google, Github, Facebook, and Twitter',
                   'You can use it at the bottom right.'
                 ]" [shuffle]="true" [isHTML]="true" [backSpeed]="30" [typeSpeed]="40">
-          </ngx-typed-writer> -->
+          </ngx-typed-writer>
 
         </div>
       </div>
@@ -94,7 +94,9 @@
 
       <div class="relative flex w-full grow flex-col items-center justify-center">
 
-        <app-login-card />
+        <router-outlet></router-outlet>
+
+        <app-login-card class="w-full" />
 
       </div>
     </div>

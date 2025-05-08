@@ -3,13 +3,12 @@ import { CommonModule } from '@angular/common';
 
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
-import { SignInComponent } from '../sign-in/sign-in.component';
 import { AuthService } from '../../../service/auth/auth.service';
 import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login-card',
-  imports: [CommonModule, MatButtonModule, MatIconModule, SignInComponent],
+  imports: [CommonModule, MatButtonModule, MatIconModule],
   templateUrl: './login-card.component.html',
   styleUrl: './login-card.component.css',
   changeDetection: ChangeDetectionStrategy.OnPush,
