@@ -2,7 +2,9 @@ import { inject, Injectable } from '@angular/core';
 import {
   Auth,
   browserSessionPersistence,
+  GoogleAuthProvider,
   signInWithEmailAndPassword,
+  signInWithPopup,
   signOut,
   user,
   User,
@@ -71,5 +73,20 @@ export class AuthService {
       //   return of(null); // or throwError(error);
       // })
       ();
+  }
+
+  async googleLogin(): Promise<void> {
+    const provider = new GoogleAuthProvider();
+    try {
+      const result = await signInWithPopup(this.firebaseAuth, provider);
+      const user = result.user;
+
+      if (!user) {
+        throw new Error('Google-Login error');
+      }
+    } catch (error) {
+      console.error('Google login error:', error);
+      throw error;
+    }
   }
 }
