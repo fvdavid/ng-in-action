@@ -14,11 +14,10 @@ add tailwindcss:
 
 
 ### Firebase
-
     [ ] Firestore
-    [ ] Hosting
+    [x] Hosting
     [ ] Storage
-    [ ] Authehtication
+    [x] Authehtication
 
 ## Firebase Hosting
 
