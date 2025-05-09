@@ -1,0 +1,106 @@
+<!-- <div class="mx-auto overflow-hidden shadow-md">
+  <div class="h-dvh flex"> -->
+
+<!-- <div class="bg-green-300 md:shrink-0 hidden md:block w-3/5">
+      <div class="static">
+        <div class="absolute bottom-1/2 ml-5">
+          <p class="">
+            You can login in this page with
+          </p>
+          <span>
+            (running text here!)
+            Email and Password, Google,
+            <br /> Github, Facebook, and Twitter
+          </span>
+        </div>
+      </div>
+    </div> -->
+
+<!-- <div class="sm:w-full md:w-full lg:w-2/5 xl:w-2/5 2xl:w-2/5 w-full bg-slate-700">
+
+      <div class="static">
+        <div class="absolute bottom-1/2">
+
+          <div class="flex flex-col items-center justify-center">
+            <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+
+              <mat-form-field class="w-full">
+                <mat-label>Email</mat-label>
+                <input type="email" matInput formControlName="email" placeholder="Ex. fv@example.com">
+
+                @if (loginForm.get('email')?.invalid && loginForm.get('email')?.touched) {
+                <mat-error>A valid email is required.</mat-error>
+                }
+              </mat-form-field>
+
+
+              <mat-form-field class="w-full">
+                <mat-label>Password</mat-label>
+                <input type="password" matInput autocomplete formControlName="password">
+
+                @if (loginForm.get('password')?.invalid && loginForm.get('password')?.touched) {
+                <mat-error>
+                  Password must be at least 6 characters long.
+                </mat-error>
+                }
+              </mat-form-field>
+
+              <div class="mt-4">
+                <button class="w-full" type="submit" mat-stroked-button [disabled]="loginForm.invalid">
+                  Login
+                </button>
+              </div>
+
+            </form>
+          </div>
+        </div>
+      </div>
+
+    </div> -->
+
+<!-- </div> -->
+<!-- </div> -->
+
+<div class="flex h-[100vh] flex-col justify-between" style="height: 100dvh">
+
+  <div class="flex w-screen flex-1 flex-col md:grid md:grid-cols-2 lg:grid-cols-[60%_40%]">
+
+    <div
+      class="relative hidden flex-1 flex-col justify-center px-5 pt-8 text-[#FE7600] md:flex md:px-6 md:py-[22px] lg:px-8 dark:text-[#D292FF] bg-[#00002e]">
+
+      <nav class="start-0 top-8 flex w-full px-6 sm:absolute md:top-[22px] md:px-6 lg:px-8">
+        <p class="text-[28px] font-bold leading-[1.2] md:text-[30px] bg-[#00002e]">
+          fvdavid
+        </p>
+      </nav>
+
+      <div class="flex flex-col text-[32px] leading-[1.2] md:text-[40px]">
+        <div class="-mt-4 flex w-full flex-col ps-5 md:ps-8 lg:ps-10">
+
+          <ngx-typed-writer [strings]="[
+                  'This sample create with Angular 19 + Material UI + Tailwindcss + Firebase Authentication',
+                  'You can login with Email and Password, also with Google, Github, Facebook, and Twitter',
+                  'You can use it at the bottom right.'
+                ]" [shuffle]="true" [isHTML]="true" [backSpeed]="30" [typeSpeed]="40">
+          </ngx-typed-writer>
+
+        </div>
+      </div>
+    </div>
+
+
+    <div
+      class="relative flex grow flex-col items-center justify-between bg-white px-5 py-8 text-black sm:rounded-t-[30px] md:rounded-none md:px-6 dark:bg-black dark:text-white">
+
+      <div class="relative flex w-full grow flex-col items-center justify-center">
+
+        <router-outlet></router-outlet>
+
+        <app-login-card class="w-full" />
+
+      </div>
+    </div>
+
+  </div>
+
+</div>
