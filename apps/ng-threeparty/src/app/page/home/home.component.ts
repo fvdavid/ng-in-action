@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import {MatToolbarModule} from '@angular/material/toolbar';
-import { ListProductComponent } from "../product/list-product.component";
+import { ListProductComponent } from "../product/list-product/list-product.component";
 
 @Component({
   selector: 'app-home',
