@@ -1,0 +1,57 @@
+<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-4 p-10">
+
+  @for(i of recomendationsProducts; track $index) {
+
+  <div class="col-span-1 backdrop-sepia-0 bg-transparent">
+    <div class="max-w-sm rounded overflow-hidden">
+      <div class="relative h-[18rem]">
+        <img
+          class="mask-type-alpha object-fill w-full h-full transition delay-350 duration-700 ease-in-out hover:-translate-y-3 hover:scale-110 rounded-[50%] hover:rounded-sm"
+          [src]="i.imgUrl" [alt]="i.name">
+
+        <!-- <div class="">
+          <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="favorite"
+            class="absolute top-0 right-0 h-[45px] hover:text-red-600 size-5"></mat-icon>
+        </div> -->
+      </div>
+
+      <div class="px-6 py-2">
+        <div class="font-bold text-xl mb-2">
+          {{ i.name }}
+        </div>
+        <p class="text-gray-700 text-base text-ellipsis whitespace-nowrap overflow-hidden">
+          {{ i.shortdescription }}
+        </p>
+
+        <div>
+          <p class="">
+            <span class="underline font-medium">
+              Rp {{ i.price | number: '1.0-0' }}
+            </span>
+            Per Malam
+          </p>
+        </div>
+
+        <div class="mt-1">
+          @for(t of i.tags; track $index) {
+          <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-1">
+            #{{ t }}
+          </span>
+          }
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+  }
+
+
+  <!-- <div class="col-span-1">02</div>
+  <div class="col-span-1">03</div>
+  <div class="col-span-1">04</div>
+  <div class="col-span-1">05</div>
+  <div class="col-span-1">06</div>
+  <div class="col-span-2">07</div> -->
+</div>

@@ -1,9 +1,10 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import { ListProductComponent } from "../product/list-product.component";
 
 @Component({
   selector: 'app-home',
-  imports: [CommonModule],
+  imports: [MatToolbarModule, ListProductComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css',
   changeDetection: ChangeDetectionStrategy.OnPush,
