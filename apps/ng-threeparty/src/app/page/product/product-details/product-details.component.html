@@ -7,18 +7,18 @@
       </p>
 
       <div class="w-1/6">
-        <span>
-          Share
-        </span>
+        <div class="flex justify-around">
+          <button mat-button>
+            <mat-icon>share</mat-icon>
+            Share
+          </button>
 
-        <span>
-          Save
-        </span>
+          <button mat-button>
+            <mat-icon>favorite</mat-icon>
+            Save
+          </button>
+        </div>
       </div>
-
-      <!-- <span class="w-1/6">
-        Save
-      </span> -->
     </div>
 
     <div class="grid grid-flow-col grid-rows-6 gap-2">
@@ -67,7 +67,10 @@
 
         <div class="flex flex-row py-10 border-y-2 border-slate-300">
           <div class="w-1/6">
-            avatar
+            <!-- avatar -->
+            <img class="w-[4rem] h-[4rem] rounded-full"
+              src="https://a0.muscache.com/im/pictures/user/User-530596026/original/07383b98-93d5-46c7-bb99-d4e27f115fb3.jpeg?im_w=240"
+              alt="Avatar of Jonathan Reinink">
           </div>
 
           <div class="w-5/6">
@@ -283,9 +286,11 @@
       Average rating will appear after 3 reviews
     </p>
 
-    <div class="flex flex-row pt-5 pb-3">
-      <div class="w-1/6">
-        avatar
+    <div class="flex flex-row items-center justify-center pt-5 pb-3">
+      <div class="flex items-center justify-center w-1/6">
+        <img class="w-12 h-12 rounded-full"
+          src="https://a0.muscache.com/im/pictures/user/a195b700-cab2-4ba2-a623-44dfa8b3ea0d.jpg?im_w=240"
+          alt="Avatar of Jonathan Reinink">
       </div>
 
       <div class="w-5/6">
