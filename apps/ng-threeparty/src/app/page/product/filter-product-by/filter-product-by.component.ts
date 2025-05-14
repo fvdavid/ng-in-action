@@ -1,7 +1,8 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { DecimalPipe } from '@angular/common';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-filter-product-by',
@@ -11,6 +12,8 @@ import { DecimalPipe } from '@angular/common';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class FilterProductByComponent {
+  router = inject(Router);
+
   recomendationsProducts = [
     {
       id: 1,
@@ -202,4 +205,8 @@ export class FilterProductByComponent {
       tags: ['Mountain', 'Nature', 'Sunset', 'Cold', 'Winter'],
     },
   ];
+
+  gotoProductsDetail(i: number) {
+    this.router.navigateByUrl(`/product/${i}`);
+  }
 }

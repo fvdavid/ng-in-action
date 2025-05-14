@@ -2,7 +2,9 @@
 
   @for(i of recomendationsProducts; track $index) {
 
-  <div class="col-span-1 backdrop-sepia-0 bg-transparent cursor-pointer">
+  <div
+    class="col-span-1 backdrop-sepia-0 bg-transparent cursor-pointer w-full text-left hover:bg-slate-100 rounded-br-xl rounded-bl-xl"
+    (click)="gotoProductsDetail(i.id)" (keyup.enter)="gotoProductsDetail(i.id)" tabindex="0" role="button">
     <div class="max-w-sm rounded overflow-hidden">
       <div class="relative h-[18rem]">
         <img

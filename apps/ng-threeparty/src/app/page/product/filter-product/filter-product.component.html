@@ -8,9 +8,9 @@
         @for(l of navLinks; track $index) {
         <a mat-tab-link [routerLink]="l.link" routerLinkActive #rla="routerLinkActive" [active]="rla.isActive">
 
-          <div
-            class="flex flex-col items-center justify-center mx-5 cursor-pointer contrast-0 hover:contrast-100
-          text-[#a70707] hover:text-[#701d1d] transition-all duration-300 ease-in-out underline-offset-4 hover:underline">
+          <!-- class="flex flex-col items-center justify-center mx-5 cursor-pointer contrast-0 hover:contrast-100
+              text-[#a70707] hover:text-[#701d1d] transition-all duration-300 ease-in-out underline-offset-4" -->
+          <div class="flex flex-col items-center justify-center gap-1 contrast-50">
             <img class="h-10 w-10" [src]="l.iconUrl" [alt]="l.value" />
             <p class="">
               {{ l.name }}

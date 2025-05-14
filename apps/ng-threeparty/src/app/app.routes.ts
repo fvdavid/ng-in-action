@@ -16,17 +16,17 @@ export const appRoutes: Route[] = [
       {
         path: '',
         redirectTo: 'trending',
-        pathMatch: 'full'
-      }
+        pathMatch: 'full',
+      },
     ],
   },
-  // {
-  //   path: 'product/:id',
-  //   loadComponent: () =>
-  //     import(
-  //       './page/product/filter-product-by/filter-product-by.component'
-  //     ).then((fb) => fb.FilterProductByComponent),
-  // },
+  {
+    path: 'product/:id',
+    loadComponent: () =>
+      import('./page/product/product-details/product-details.component').then(
+        (pd) => pd.ProductDetailsComponent
+      ),
+  },
 
   // {
   //   path: 'product',
