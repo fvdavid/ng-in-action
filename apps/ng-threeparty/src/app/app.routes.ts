@@ -2,10 +2,49 @@ import { Route } from '@angular/router';
 
 export const appRoutes: Route[] = [
   {
-    path: 'home',
+    path: '',
     loadComponent: () =>
       import('./page/home/home.component').then((h) => h.HomeComponent),
+    children: [
+      {
+        path: ':id',
+        loadComponent: () =>
+          import(
+            './page/product/filter-product-by/filter-product-by.component'
+          ).then((f) => f.FilterProductByComponent),
+      },
+      {
+        path: '',
+        redirectTo: 'trending',
+        pathMatch: 'full',
+      },
+    ],
   },
+  {
+    path: 'product/:id',
+    loadComponent: () =>
+      import('./page/product/product-details/product-details.component').then(
+        (pd) => pd.ProductDetailsComponent
+      ),
+  },
+
+  // {
+  //   path: 'product',
+  //   loadComponent: () =>
+  //     import('./page/product/filter-product/filter-product.component').then(
+  //       (fp) => fp.FilterProductComponent
+  //     ),
+  //   children: [
+  //     {
+  //       path: 'photos',
+  //       loadComponent: () =>
+  //         import(
+  //           './page/product/filter-product-by/filter-product-by.component'
+  //         ).then((f) => f.FilterProductByComponent),
+  //     },
+  //   ],
+  // },
+
   {
     path: 'auth',
     loadComponent: () =>
@@ -32,7 +71,7 @@ export const appRoutes: Route[] = [
 
   {
     path: '',
-    redirectTo: 'auth/login',
+    redirectTo: 'trending',
     pathMatch: 'full',
   },
 ];

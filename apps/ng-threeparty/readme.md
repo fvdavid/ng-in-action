@@ -38,9 +38,9 @@ add tailwindcss:
 
 pnpm nx g @nx/angular:component --path=apps/ng-threeparty/src/app/page/login/login --changeDetection=OnPush
 
-pnpm nx g @nx/angular:component --path=apps/ng-threeparty/src/app/page/home/home --changeDetection=OnPush
+pnpm nx g @nx/angular:component --path=apps/ng-threeparty/src/app/page/product/product-details/product-details --changeDetection=OnPush
 
-pnpm nx g @nx/angular:service --path=apps/ng-threeparty/src/app/service/auth
+pnpm nx g @nx/angular:directive --path=apps/ng-threeparty/src/app/directive/swiper
 
 ## Util Libraries
 
