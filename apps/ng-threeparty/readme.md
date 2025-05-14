@@ -38,7 +38,7 @@ add tailwindcss:
 
 pnpm nx g @nx/angular:component --path=apps/ng-threeparty/src/app/page/login/login --changeDetection=OnPush
 
-pnpm nx g @nx/angular:component --path=apps/ng-threeparty/src/app/page/product/filter-product-by/filter-product-by --changeDetection=OnPush
+pnpm nx g @nx/angular:component --path=apps/ng-threeparty/src/app/page/product/sort-product/sort-product --changeDetection=OnPush
 
 pnpm nx g @nx/angular:directive --path=apps/ng-threeparty/src/app/directive/swiper
 
