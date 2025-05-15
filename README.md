@@ -7,12 +7,14 @@ Trying to clone Airbnb
 - https://fv-demos.web.app
 
 Serve:
-
-> pnpm nx serve ng-threeparty
+```sh
+pnpm nx serve ng-threeparty
+```
 
 Build:
-
-> pnpm nx build ng-threeparty
+```sh
+pnpm nx build ng-threeparty
+```
 
 ## ng-ngrx-signal
 
