@@ -6,9 +6,8 @@ import {
 } from '@angular/core';
 
 import { MapComponent, MarkerComponent, PopupComponent } from 'ngx-mapbox-gl';
-
-import { Hotel } from '../product-place/product-place.component';
 import { NgStyle } from '@angular/common';
+import { Hotel } from '../../../model/hotel.model';
 
 @Component({
   selector: 'app-product-map',
