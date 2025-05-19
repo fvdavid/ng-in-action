@@ -1,0 +1,51 @@
+<!-- (moveEnd)="onMapMove($event)" -->
+<mgl-map [style]="'mapbox://styles/mapbox/streets-v12'" [center]="[hotels()[0].lng,hotels()[0].lat]" [zoom]="[17]"
+  [minZoom]="15">
+
+  @for(p of hotels(); track $index) {
+
+  <mgl-marker #myMarker [lngLat]="[p.lng,p.lat]">
+    <div [ngStyle]="{
+            'background-color': 'black',
+            'background-size': 'cover',
+            width: 'auto',
+            height: 'auto',
+            padding: '7px',
+            color: 'white',
+            'border-radius': '10px',
+            cursor: 'pointer',
+          }">
+      $ {{ p.price }}
+    </div>
+  </mgl-marker>
+  <mgl-popup [marker]="myMarker">
+    <div class="w-[200px] bg-blue-100 rounded-lg">
+      <div>
+        <img class="rounded-t-lg" [src]="p.imgUrl" alt="name" />
+      </div>
+
+      <div class="p-2">
+        <div class="flex flex-row items-center justify-center">
+          <p class="w-1/2 font-bold text-lg">
+            {{ p.name }}
+          </p>
+          <div class="flex w-1/2 items-center justify-center">
+            <mat-icon style="font-size: 20px;" aria-hidden="false" aria-label="Example home icon"
+              fontIcon="star"></mat-icon>
+            <span>{{ p.rating }} ({{ p.givenRating }})</span>
+          </div>
+        </div>
+
+        <p class="text-slate-600">
+          Free Cancellation
+        </p>
+        <p class="mt-2">
+          <span class="text-base font-bold">$ {{ p.price }}</span> for 1 night
+        </p>
+      </div>
+    </div>
+  </mgl-popup>
+
+  }
+
+</mgl-map>

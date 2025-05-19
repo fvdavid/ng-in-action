@@ -27,6 +27,13 @@ export const appRoutes: Route[] = [
         (pd) => pd.ProductDetailsComponent
       ),
   },
+  {
+    path: 's/place',
+    loadComponent: () =>
+      import('./page/product/product-place/product-place.component').then(
+        (pp) => pp.ProductPlaceComponent
+      ),
+  },
 
   // {
   //   path: 'product',

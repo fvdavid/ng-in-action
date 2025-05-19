@@ -6,6 +6,7 @@ import { getAuth, provideAuth } from '@angular/fire/auth';
 import { getFirestore, provideFirestore } from '@angular/fire/firestore';
 import { provideHttpClient } from '@angular/common/http';
 import { provideAuth0 } from '@auth0/auth0-angular';
+import { provideMapboxGL } from 'ngx-mapbox-gl';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -30,6 +31,16 @@ export const appConfig: ApplicationConfig = {
       authorizationParams: {
         redirect_uri: window.location.origin,
       },
+    }),
+
+    // provideMapboxGL({
+    //   accessToken:
+    //     'pk.eyJ1IjoiZnZkYXZpZCIsImEiOiJjbWFwdWFzZmYwMm05MmtvZW1yMTE4ODRxIn0.W3i4djgesk1cEDT8rOaejg',
+    // }),
+
+    provideMapboxGL({
+      accessToken:
+        'pk.eyJ1Ijoid3lra3NzIiwiYSI6ImNtOWVjamJvYzE0bnMya3NjMGtlYzB2cjUifQ.15RQ3pM0Tmw9hWgYMITbDw',
     }),
   ],
 };

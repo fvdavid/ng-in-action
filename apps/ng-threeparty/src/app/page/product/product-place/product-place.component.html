@@ -1,0 +1,28 @@
+<!-- <section> -->
+  <!-- <header>
+    <mat-toolbar class="flex" color="warn" class="toolbar cursor-pointer" routerLink="/">
+      Rent Your Space
+    </mat-toolbar>
+  </header> -->
+
+  <!-- <app-sort-product />
+</section> -->
+
+<div class="flex">
+  <div class="w-3/4">
+    <app-sort-product />
+
+    <app-product-list-map [hotels]="filteredHotels()" />
+  </div>
+
+  <div class="w-1/4 sm:w-1/2 md:w-1/2 px-20 lg:px-1 md:px-0">
+    <div class="sticky top-0">
+      <div class="overflow-hidden h-screen flex items-center justify-center">
+        <div class="h-[90%] w-full rounded-xl">
+          <app-product-map [hotels]="filteredHotels()" />
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
