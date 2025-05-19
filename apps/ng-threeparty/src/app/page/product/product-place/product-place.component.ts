@@ -2,10 +2,12 @@ import { ChangeDetectionStrategy, Component, signal } from '@angular/core';
 import { ProductMapComponent } from '../product-map/product-map.component';
 import { ProductListMapComponent } from '../product-list-map/product-list-map.component';
 import { Hotel } from '../../../model/hotel.model';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { SortProductComponent } from "../sort-product/sort-product.component";
 
 @Component({
   selector: 'app-product-place',
-  imports: [ProductMapComponent, ProductListMapComponent],
+  imports: [ProductMapComponent, ProductListMapComponent, MatToolbarModule, SortProductComponent],
   templateUrl: './product-place.component.html',
   styleUrl: './product-place.component.css',
   changeDetection: ChangeDetectionStrategy.OnPush,
