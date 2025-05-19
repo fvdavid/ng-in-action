@@ -1,14 +1,16 @@
-<div class="flex h-screen">
-  <div class="w-2/3">
-
+<div class="flex">
+  <div class="w-3/4">
     <app-product-list-map [hotels]="filteredHotels()" />
-
   </div>
 
-
-  <div class="w-1/3 h-[85%] bg-slate-200 rounded-2xl mr-4 mt-[5%]">
-
-    <app-product-map [hotels]="filteredHotels()" />
-
+  <div class="w-1/4 sm:w-1/2 md:w-1/2 pr-[20px]">
+    <div class="sticky top-0">
+      <div class="overflow-hidden h-screen flex items-center justify-center">
+        <div class="h-[90%] w-full rounded-xl">
+          <app-product-map [hotels]="filteredHotels()" />
+        </div>
+      </div>
+    </div>
   </div>
+
 </div>

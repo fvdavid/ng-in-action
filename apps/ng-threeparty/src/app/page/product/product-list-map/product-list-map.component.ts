@@ -1,6 +1,7 @@
-import { ChangeDetectionStrategy, Component, input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject, input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Hotel } from '../product-place/product-place.component';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-product-list-map',
@@ -11,4 +12,10 @@ import { Hotel } from '../product-place/product-place.component';
 })
 export class ProductListMapComponent {
   hotels = input<Hotel[]>([]);
+
+  router = inject(Router);
+
+  gotoProductsDetail(i: number) {
+    this.router.navigateByUrl(`/product/${i}`);
+  }
 }
