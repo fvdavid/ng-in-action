@@ -1,37 +1,33 @@
 <div class="flex flex-row items-center justify-between">
-  <div class="flex flex-col w-4/6">
+  <div class="flex flex-col w-full md:w-4/6">
+    <nav mat-tab-nav-bar [tabPanel]="tabPanel">
 
-    <div class="">
+      @for(l of navLinks; track $index) {
+      <a mat-tab-link [routerLink]="l.link" routerLinkActive #rla="routerLinkActive" [active]="rla.isActive">
 
-      <nav mat-tab-nav-bar [tabPanel]="tabPanel">
-
-        @for(l of navLinks; track $index) {
-        <a mat-tab-link [routerLink]="l.link" routerLinkActive #rla="routerLinkActive" [active]="rla.isActive">
-
-          <!-- class="flex flex-col items-center justify-center mx-5 cursor-pointer contrast-0 hover:contrast-100
+        <!-- class="flex flex-col items-center justify-center mx-5 cursor-pointer contrast-0 hover:contrast-100
               text-[#a70707] hover:text-[#701d1d] transition-all duration-300 ease-in-out underline-offset-4" -->
-          <div class="flex flex-col items-center justify-center gap-1 contrast-50">
-            <img class="h-10 w-10" [src]="l.iconUrl" [alt]="l.value" />
-            <p class="">
-              {{ l.name }}
-            </p>
-          </div>
+        <div class="flex flex-col items-center justify-center gap-1 contrast-50">
+          <img class="h-10 w-10" [src]="l.iconUrl" [alt]="l.value" />
+          <p class="">
+            {{ l.name }}
+          </p>
+        </div>
 
-        </a>
-        }
+      </a>
+      }
 
-      </nav>
-    </div>
+    </nav>
   </div>
 
-  <div class="flex flex-col w-1/6 items-center">
+  <div class="w-1/6 hidden sm:hidden md:block lg:block">
     <button mat-stroked-button>
       <mat-icon>tune</mat-icon>
       Filter
     </button>
   </div>
 
-  <div class="flex flex-row w-1/6 items-center">
+  <div class="w-1/6 hidden sm:hidden md:block lg:block">
     <button mat-button>
       <mat-icon style="color: red;">sell</mat-icon>
       All discount here
