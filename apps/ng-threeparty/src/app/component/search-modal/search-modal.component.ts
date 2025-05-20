@@ -7,16 +7,14 @@ import {
   FormControl,
   FormGroup,
   FormsModule,
-  ReactiveFormsModule,
+  ReactiveFormsModule
 } from '@angular/forms';
-import { provideNativeDateAdapter } from '@angular/material/core';
 import { Router } from '@angular/router';
-
-import { MatDialog } from '@angular/material/dialog';
-import { SearchModalComponent } from '../../../component/search-modal/search-modal.component';
+import { provideNativeDateAdapter } from '@angular/material/core';
+import { MatDialogClose } from '@angular/material/dialog';
 
 @Component({
-  selector: 'app-sort-product',
+  selector: 'app-search-modal',
   imports: [
     MatButtonModule,
     MatIconModule,
@@ -24,28 +22,22 @@ import { SearchModalComponent } from '../../../component/search-modal/search-mod
     MatDatepickerModule,
     FormsModule,
     ReactiveFormsModule,
+    MatDialogClose
   ],
-  templateUrl: './sort-product.component.html',
-  styleUrl: './sort-product.component.css',
+  templateUrl: './search-modal.component.html',
+  styleUrl: './search-modal.component.css',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  providers: [provideNativeDateAdapter()],
+  providers: [provideNativeDateAdapter()]
 })
-export class SortProductComponent {
+export class SearchModalComponent {
   readonly range = new FormGroup({
     start: new FormControl<Date | null>(null),
     end: new FormControl<Date | null>(null),
   });
 
   router = inject(Router);
-  readonly dialog = inject(MatDialog);
 
   gotoSearchPlace() {
     this.router.navigateByUrl('/s/place');
-  }
-
-  openSearchDialog() {
-    this.dialog.open(SearchModalComponent, {
-      width: '70%',
-    });
   }
 }
