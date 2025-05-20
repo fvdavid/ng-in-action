@@ -1,4 +1,4 @@
-<div class="flex flex-row items-center justify-between">
+<div class="flex flex-row items-center justify-between mt-5">
   <div class="flex flex-col w-full md:w-4/6">
     <nav mat-tab-nav-bar [tabPanel]="tabPanel">
 
@@ -21,18 +21,21 @@
   </div>
 
   <div class="w-1/6 hidden sm:hidden md:block lg:block">
-    <button mat-stroked-button>
-      <mat-icon>tune</mat-icon>
-      Filter
-    </button>
+    <div class="flex items-center justify-center">
+      <button mat-stroked-button class="">
+        <mat-icon>tune</mat-icon>
+        Filter
+      </button>
+    </div>
   </div>
 
   <div class="w-1/6 hidden sm:hidden md:block lg:block">
-    <button mat-button>
-      <mat-icon style="color: red;">sell</mat-icon>
-      All discount here
-    </button>
-
+    <div class="flex items-center justify-center">
+      <button mat-button>
+        <mat-icon style="color: red;">sell</mat-icon>
+        All discount here
+      </button>
+    </div>
   </div>
 </div>
 
