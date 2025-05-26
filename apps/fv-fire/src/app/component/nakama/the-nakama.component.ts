@@ -12,9 +12,12 @@ import {
   MatDialogContent,
   MatDialogActions,
   MatDialogClose,
+  MatDialogRef,
 } from '@angular/material/dialog';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
+import { NakamaService } from '../../service/nakama/nakama.service';
+import { Nakama } from '../../model/nakama.model';
 
 @Component({
   selector: 'app-the-nakama',
@@ -32,11 +35,14 @@ import { MatInputModule } from '@angular/material/input';
   templateUrl: './the-nakama.component.html',
   styleUrl: './the-nakama.component.css',
   changeDetection: ChangeDetectionStrategy.OnPush,
+  providers: [NakamaService],
 })
 export class TheNakamaComponent {
   data = inject(MAT_DIALOG_DATA);
 
   #fb: FormBuilder = inject(FormBuilder);
+  #nakamaService = inject(NakamaService);
+  dialogRef = inject(MatDialogRef<TheNakamaComponent>);
 
   nakamaForm = this.#fb.nonNullable.group({
     name: ['', [Validators.required]],
@@ -44,7 +50,7 @@ export class TheNakamaComponent {
     devilFruit: ['', [Validators.required]],
     type: [''],
     model: [''],
-    bounty: ['', [Validators.required]],
+    bounty: [0, [Validators.required]],
     originOfResidence: [''],
     equipment: [''],
     imgUrl: [''],
@@ -55,7 +61,7 @@ export class TheNakamaComponent {
       this.nakamaForm = this.#fb.nonNullable.group({
         name: [this.data.nakama.name, [Validators.required]],
         nickname: [this.data.nakama.nickname, [Validators.required]],
-        devilFruit: [this.data.nakamadevilFruit, [Validators.required]],
+        devilFruit: [this.data.nakama.devilFruit, [Validators.required]],
         type: [this.data.nakama.type],
         model: [this.data.nakama.model],
         bounty: [this.data.nakama.bounty, [Validators.required]],
@@ -67,7 +73,14 @@ export class TheNakamaComponent {
   }
 
   onSubmit() {
-    const rawForm = this.nakamaForm.getRawValue();
-    console.log('rawForm ==> ', rawForm);
+    const rawForm: Nakama = this.nakamaForm.getRawValue();
+
+    if (this.data.mode !== 'Update') {
+      this.#nakamaService.add(rawForm);
+    } else {
+      rawForm.id = this.data.nakama.id;
+      this.#nakamaService.update(rawForm);
+      this.dialogRef.close(rawForm);
+    }
   }
 }

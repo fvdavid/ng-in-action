@@ -1,4 +1,5 @@
 export interface Nakama {
+  id?: string;
   name?: string;
   nickname?: string;
   devilFruit?: string;

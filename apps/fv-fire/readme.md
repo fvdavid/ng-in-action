@@ -19,3 +19,6 @@ pnpm nx g @nx/angular:component --path=apps/fv-fire/src/app/component/nakama/the
 
   - pnpm add @angular/fire
   - pnpm npx nx g @angular/fire:ng-add --project=fv-fire
+
+
+pnpm nx g @nx/angular:service service/nakama/nakama --project=fv-fire

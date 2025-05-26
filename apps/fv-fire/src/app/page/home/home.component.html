@@ -6,7 +6,7 @@
     </p>
 
     <ul>
-      @for(n of listofNakama; track $index) {
+      @for(n of nakamas(); track $index) {
       <li (click)="clicked(n)" (keydown.enter)="clicked(n)" tabindex="0"
         class="w-full rounded-md my-3 cursor-pointer text-slate-300 hover:bg-slate-200 hover:text-black">
         <label class="w-full cursor-pointer">
