@@ -1,7 +1,4 @@
 import { Injectable, inject } from '@angular/core';
-// import { AngularFirestore, QueryFn } from '@angular/fire/compat/firestore';
-// import { from, map } from 'rxjs';
-
 import {
   Firestore,
   collection,
@@ -11,58 +8,14 @@ import {
   deleteDoc,
   doc,
   query,
-  QueryConstraint
+  QueryConstraint,
 } from '@angular/fire/firestore';
-import { from, map, Observable } from 'rxjs';
+import { from, Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
 })
 export abstract class FireStoreService<T extends { id?: string }> {
-  // #firestore = inject(AngularFirestore);
-  // #collectionName: string;
-
-  // constructor(collection: string) {
-  //   this.#collectionName = collection;
-  // }
-
-  // collection(queryFn?: QueryFn) {
-  //   return this.#firestore.collection<T>(this.#collectionName, queryFn);
-  // }
-
-  // getSnapshotChanges(queryFn?: QueryFn) {
-  //   return this.#firestore
-  //     .collection<T>(this.#collectionName, queryFn)
-  //     .snapshotChanges()
-  //     .pipe(
-  //       map((data) =>
-  //         data.map((d) => {
-  //           const data: T = { id: d.payload.doc.id, ...d.payload.doc.data() };
-  //           return data;
-  //         })
-  //       )
-  //     );
-  // }
-
-  // add(data: T) {
-  //   return from(this.#firestore.collection<T>(this.#collectionName).add(data));
-  // }
-
-  // update(data: T) {
-  //   return from(
-  //     this.#firestore
-  //       .collection<T>(this.#collectionName)
-  //       .doc(data.id)
-  //       .update(data)
-  //   );
-  // }
-
-  // delete(data: T) {
-  //   return from(
-  //     this.#firestore.collection<T>(this.#collectionName).doc(data.id).delete()
-  //   );
-  // }
-
   protected firestore = inject(Firestore);
   protected collectionName: string;
 
@@ -86,12 +39,12 @@ export abstract class FireStoreService<T extends { id?: string }> {
   }
 
   update(data: T) {
-    const ref = doc(this.firestore, this.collectionName, data.id!);
+    const ref = doc(this.firestore, this.collectionName, data.id ?? '');
     return from(updateDoc(ref, { ...data }));
   }
 
   delete(data: T) {
-    const ref = doc(this.firestore, this.collectionName, data.id!);
+    const ref = doc(this.firestore, this.collectionName, data.id ?? '');
     return from(deleteDoc(ref));
   }
 }

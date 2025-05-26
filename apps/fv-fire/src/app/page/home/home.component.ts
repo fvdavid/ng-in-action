@@ -39,7 +39,7 @@ export class HomeComponent {
     this.nakama.set(nakama);
   }
 
-  updateData(nakama?: Nakama) {
+  updateNakama(nakama?: Nakama) {
     if (nakama !== undefined) {
       const dialogRef = this.#dialog.open(TheNakamaComponent, {
         data: {
@@ -60,5 +60,10 @@ export class HomeComponent {
         width: '600px',
       });
     }
+  }
+
+  deleteNakama(nakama: Nakama) {
+    this.#nakamaService.delete(nakama);
+    window.location.reload();
   }
 }

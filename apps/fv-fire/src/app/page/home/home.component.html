@@ -19,7 +19,7 @@
       }
     </ul>
 
-    <button class="my-10" mat-stroked-button (click)="updateData()">
+    <button class="my-10" mat-stroked-button (click)="updateNakama()">
       Add New Nakama
     </button>
 
@@ -72,9 +72,16 @@
         <span class="text-2xl font-bold">{{ nakama().equipment }}</span>
       </p>
 
-      <button class="my-10" mat-stroked-button (click)="updateData(nakama())">
-        Update Data
-      </button>
+      <div class="flex justify-evenly my-10">
+        <button class="" mat-stroked-button (click)="updateNakama(nakama())">
+          Update Nakama
+        </button>
+
+        <button mat-flat-button (click)="deleteNakama(nakama())">
+          Delete Nakama
+        </button>
+
+      </div>
     </div>
 
     } @placeholder {
