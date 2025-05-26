@@ -1,0 +1,101 @@
+<h2 mat-dialog-title>Update Data Nakama</h2>
+<mat-dialog-content>
+
+  <!-- <ul>
+    {{ data.nakama.name }}
+  </ul> -->
+
+  <form [formGroup]="nakamaForm" (ngSubmit)="onSubmit()" class="flex flex-col items-center justify-center">
+
+    <img src="https://static.wikia.nocookie.net/onepiece/images/3/35/Usopp_Anime_Post_Timeskip_Infobox.png" alt="usopp"
+      class="h-[250px] w-[250px] my-2" />
+
+    <mat-form-field class="w-2/3">
+      <mat-label>Name</mat-label>
+      <input type="text" matInput formControlName="name" value="fvdavid@gmail.com" required>
+      <mat-icon matSuffix>mode_edit</mat-icon>
+
+      @if (nakamaForm.get('name')?.invalid && nakamaForm.get('name')?.touched) {
+      <mat-error>A valid name is required.</mat-error>
+      }
+    </mat-form-field>
+
+    <mat-form-field class="w-2/3">
+      <mat-label>Nickname</mat-label>
+      <input type="text" matInput formControlName="nickname" required>
+      <mat-icon matSuffix>mode_edit</mat-icon>
+
+      @if (nakamaForm.get('nickname')?.invalid && nakamaForm.get('nickname')?.touched) {
+      <mat-error>A valid nickname is required.</mat-error>
+      }
+    </mat-form-field>
+
+    <mat-form-field class="w-2/3">
+      <mat-label>Devil Fruit</mat-label>
+      <input type="text" matInput formControlName="devilFruit" required>
+      <mat-icon matSuffix>mode_edit</mat-icon>
+
+      @if (nakamaForm.get('devilFruit')?.invalid && nakamaForm.get('devilFruit')?.touched) {
+      <mat-error>A valid devilFruit is required.</mat-error>
+      }
+    </mat-form-field>
+
+    <mat-form-field class="w-2/3">
+      <mat-label>Type</mat-label>
+      <input type="text" matInput formControlName="type" required>
+      <mat-icon matSuffix>mode_edit</mat-icon>
+
+      @if (nakamaForm.get('type')?.invalid && nakamaForm.get('type')?.touched) {
+      <mat-error>A valid type is required.</mat-error>
+      }
+    </mat-form-field>
+
+    <mat-form-field class="w-2/3">
+      <mat-label>Model</mat-label>
+      <input type="text" matInput formControlName="model" required>
+      <mat-icon matSuffix>mode_edit</mat-icon>
+
+      @if (nakamaForm.get('model')?.invalid && nakamaForm.get('model')?.touched) {
+      <mat-error>A valid model is required.</mat-error>
+      }
+    </mat-form-field>
+
+    <mat-form-field class="w-2/3">
+      <mat-label>Bounty</mat-label>
+      <input type="text" matInput formControlName="bounty" required>
+      <mat-icon matSuffix>mode_edit</mat-icon>
+
+      @if (nakamaForm.get('bounty')?.invalid && nakamaForm.get('bounty')?.touched) {
+      <mat-error>A valid bounty is required.</mat-error>
+      }
+    </mat-form-field>
+
+    <mat-form-field class="w-2/3">
+      <mat-label>Origin Of Residence</mat-label>
+      <input type="text" matInput formControlName="originOfResidence" required>
+      <mat-icon matSuffix>mode_edit</mat-icon>
+
+      @if (nakamaForm.get('originOfResidence')?.invalid && nakamaForm.get('originOfResidence')?.touched) {
+      <mat-error>A valid origin of residence is required.</mat-error>
+      }
+    </mat-form-field>
+
+    <mat-form-field class="w-2/3">
+      <mat-label>Equipment</mat-label>
+      <input type="text" matInput formControlName="equipment" required>
+      <mat-icon matSuffix>mode_edit</mat-icon>
+
+      @if (nakamaForm.get('equipment')?.invalid && nakamaForm.get('equipment')?.touched) {
+      <mat-error>A valid equipment is required.</mat-error>
+      }
+    </mat-form-field>
+
+  </form>
+
+</mat-dialog-content>
+
+<mat-dialog-actions>
+  <button mat-stroked-button mat-dialog-close>Update</button>
+
+  <button mat-button mat-dialog-close>Close</button>
+</mat-dialog-actions>
