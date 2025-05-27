@@ -10,6 +10,7 @@ Mission: Trying to clone Airbnb
 Technology stack:
 
 - Angular 19
+- Nx 20
 - Material UI
 - Tailwind CSS
 - Firebase
@@ -34,7 +35,29 @@ pnpm nx build ng-threeparty
 
 ## ng-ngrx-signal
 
-Implement Ngrx/Signal with the CRUD Todo
+[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/yKoT4aV8Oe0/0.jpg)](https://youtu.be/yKoT4aV8Oe0)
+
+Mission: Implement Ngrx/Signal with the CRUD Todo
+
+Technology stack:
+
+- Angular 19
+- Nx 20
+- [@ngrx/signals](https://ngrx.io/)
+  - @ngrx/operators
+  - @ngrx/store-devtools
+
+Run Locally:
+
+```sh
+pnpm nx serve ng-ngrx-signal
+```
+
+Build:
+
+```sh
+pnpm nx build ng-ngrx-signal
+```
 
 ## Add new projects
 
