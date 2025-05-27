@@ -1,6 +1,6 @@
 # Applications in this project
 
-## ng-threeparty
+## 1. ng-threeparty
 
 Mission: Trying to clone Airbnb
 
@@ -33,11 +33,13 @@ Build:
 pnpm nx build ng-threeparty
 ```
 
-## ng-ngrx-signal
+## 2. ng-ngrx-signal
 
 [![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/yKoT4aV8Oe0/0.jpg)](https://youtu.be/yKoT4aV8Oe0)
 
 Mission: Implement Ngrx/Signal with the CRUD Todo
+
+- [readme](https://github.com/fvdavid/ng-in-action/blob/main/apps/ng-ngrx-signal/readme.md)
 
 Technology stack:
 
@@ -59,24 +61,38 @@ Build:
 pnpm nx build ng-ngrx-signal
 ```
 
-## Add new projects
+## 3. fv-fire
 
-While you could add new projects to your workspace manually, you might want to leverage [Nx plugins](https://nx.dev/concepts/nx-plugins?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects) and their [code generation](https://nx.dev/features/generate-code?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects) feature.
+[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/HgwRTWHLPvs/0.jpg)](https://youtu.be/HgwRTWHLPvs)
 
-Use the plugin's generator to create new projects.
+Mission: Angular 19 + Firebase (Firestore) Integration
 
-To generate a new application, use:
+<p align="center">
+  <a href="https://angular.dev/">
+    <img src="https://skillicons.dev/icons?i=angular"/>
+  </a>
+  <a href="https://firebase.google.com/">
+    <img src="https://skillicons.dev/icons?i=firebase"/>
+  </a>
+</p>
+
+- [readme](https://github.com/fvdavid/ng-in-action/blob/main/apps/fv-fire/readme.md)
+
+Technology stack:
+
+- Angular 19
+- Nx 20
+- [@angular/fire](https://www.npmjs.com/package/@angular/fire)
+  - firestore
+
+Run Locally:
 
 ```sh
-npx nx g @nx/angular:app demo
+pnpm nx serve fv-fire
 ```
 
-To generate a new library, use:
+Build:
 
 ```sh
-npx nx g @nx/angular:lib mylib
+pnpm nx build fv-fire
 ```
-
-You can use `npx nx list` to get a list of installed plugins. Then, run `npx nx list <plugin-name>` to learn about more specific capabilities of a particular plugin. Alternatively, [install Nx Console](https://nx.dev/getting-started/editor-setup?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects) to browse plugins and generators in your IDE.
-
-[Learn more about Nx plugins &raquo;](https://nx.dev/concepts/nx-plugins?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects) | [Browse the plugin registry &raquo;](https://nx.dev/plugin-registry?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
