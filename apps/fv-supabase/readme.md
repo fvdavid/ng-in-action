@@ -5,7 +5,7 @@ pnpm nx g @nx/angular:application --directory=apps/fv-supabase --name=fv-supabas
 
 ## Create new Service
 
-pnpm nx g @nx/angular:service service/naruto-db/naruto-db --project=fv-supabase
+pnpm nx g @nx/angular:service service/local-state/local-state --project=fv-supabase
 
 ## Create new Component
 
