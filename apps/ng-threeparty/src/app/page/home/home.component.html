@@ -1,7 +1,15 @@
 <section class="app-container">
   <header>
-    <mat-toolbar color="warn" class="toolbar cursor-pointer" routerLink="/">
-      Rent Your Space
+    <mat-toolbar color="warn" class="toolbar cursor-pointer flex flex-row justify-between">
+      <div routerLink="/">
+        Rent Your Space
+      </div>
+
+      <div>
+        <button mat-button routerLink="auth/login">
+          Login
+        </button>
+      </div>
     </mat-toolbar>
   </header>
 

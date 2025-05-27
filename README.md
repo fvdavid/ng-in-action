@@ -1,21 +1,33 @@
-# NgInAction
+# Applications in this project
 
 ## ng-threeparty
 
-Trying to clone Airbnb
+Mission: Trying to clone Airbnb
 
-Trying to clone Airbnb
+- [readme](https://github.com/fvdavid/ng-in-action/blob/main/apps/ng-threeparty/readme.md)
+- [demo](https://fv-demos.web.app)
 
-(ng-threeparty)[https://github.com/fvdavid/ng-in-action/blob/main/apps/ng-threeparty/readme.md]
-- https://fv-demos.web.app
+Technology stack:
 
+- Angular 19
+- Material UI
+- Tailwind CSS
+- Firebase
+  - Auth
+  - Firestore
+  - Hosting
+- [@auth0](https://auth0.com/)
+- [Mapbox](https://www.mapbox.com/) => https://fv-demos.web.app/s/place
+- [ngx-typed-writer](https://www.npmjs.com/package/ngx-typed-writer) => https://fv-demos.web.app/auth/login
 
-Serve:
+Run Locally:
+
 ```sh
 pnpm nx serve ng-threeparty
 ```
 
 Build:
+
 ```sh
 pnpm nx build ng-threeparty
 ```

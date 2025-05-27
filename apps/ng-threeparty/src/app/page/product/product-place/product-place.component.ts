@@ -3,11 +3,18 @@ import { ProductMapComponent } from '../product-map/product-map.component';
 import { ProductListMapComponent } from '../product-list-map/product-list-map.component';
 import { Hotel } from '../../../model/hotel.model';
 import { MatToolbarModule } from '@angular/material/toolbar';
-import { SortProductComponent } from "../sort-product/sort-product.component";
+import { SortProductComponent } from '../sort-product/sort-product.component';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-product-place',
-  imports: [ProductMapComponent, ProductListMapComponent, MatToolbarModule, SortProductComponent],
+  imports: [
+    ProductMapComponent,
+    ProductListMapComponent,
+    MatToolbarModule,
+    SortProductComponent,
+    RouterLink,
+  ],
   templateUrl: './product-place.component.html',
   styleUrl: './product-place.component.css',
   changeDetection: ChangeDetectionStrategy.OnPush,

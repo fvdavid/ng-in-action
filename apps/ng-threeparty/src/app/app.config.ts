@@ -33,11 +33,6 @@ export const appConfig: ApplicationConfig = {
       },
     }),
 
-    // provideMapboxGL({
-    //   accessToken:
-    //     'pk.eyJ1IjoiZnZkYXZpZCIsImEiOiJjbWFwdWFzZmYwMm05MmtvZW1yMTE4ODRxIn0.W3i4djgesk1cEDT8rOaejg',
-    // }),
-
     provideMapboxGL({
       accessToken:
         'pk.eyJ1Ijoid3lra3NzIiwiYSI6ImNtOWVjamJvYzE0bnMya3NjMGtlYzB2cjUifQ.15RQ3pM0Tmw9hWgYMITbDw',
