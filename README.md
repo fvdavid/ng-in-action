@@ -1,5 +1,12 @@
 # Applications in this project
 
+Applications:
+
+- [1. ng-threeparty](#ng-threeparty)
+- [2. ng-ngrx-signal](#ng-ngrx-signal)
+- [3. fv-fire](#fv-fire)
+- [4. fv-supabase](#fv-supabase)
+
 ## 1. ng-threeparty
 
 Mission: Trying to clone Airbnb
@@ -65,7 +72,7 @@ pnpm nx build ng-ngrx-signal
 
 [![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/HgwRTWHLPvs/0.jpg)](https://youtu.be/HgwRTWHLPvs)
 
-Mission: Angular 19 + Firebase (Firestore) Integration
+Mission: CRUD with Angular 19 + Firebase (Firestore)
 
 <p align="center">
   <a href="https://angular.dev/">
@@ -95,4 +102,39 @@ Build:
 
 ```sh
 pnpm nx build fv-fire
+```
+
+## 4. fv-supabase
+
+[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/fM3BQidurF4/0.jpg)](https://youtu.be/fM3BQidurF4)
+
+Mission: Angular 19 Meets Supabase (CRUD)
+
+<p align="center">
+  <a href="https://angular.dev/">
+    <img src="https://skillicons.dev/icons?i=angular"/>
+  </a>
+  <a href="https://supabase.com/">
+    <img src="https://skillicons.dev/icons?i=supabase"/>
+  </a>
+</p>
+
+- [readme](https://github.com/fvdavid/ng-in-action/blob/main/apps/fv-supabase/readme.md)
+
+Technology stack:
+
+- Angular 19
+- Nx 20
+- [Supabase](https://supabase.com)
+
+Run Locally:
+
+```sh
+pnpm nx serve fv-supabase
+```
+
+Build:
+
+```sh
+pnpm nx build fv-supabase
 ```
